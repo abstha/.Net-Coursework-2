@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 //DbContext Config
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer("Data Source=LAPTOP-ERS22E1S\\SQLEXPRESS;Initial Catalog=Net-Coursework-DB;Integrated Security=True;Pooling=False"));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer("Data Source=LAPTOP-ERS22E1S\\SQLEXPRESS;Initial Catalog=Net-Coursework-DB;Integrated Security=True;Pooling=False;Encrypt=False"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
