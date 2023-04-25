@@ -14,7 +14,7 @@ namespace CW.Models
         [ForeignKey("UserId")]
         public int UserId { get; set; }
 
-        public DateOnly DateDamaged { get; set; }
+        public DateTime DateDamaged { get; set; }
 
         public string DamageDesc { get; set; }
 

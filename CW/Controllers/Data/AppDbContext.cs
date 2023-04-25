@@ -16,11 +16,7 @@ namespace CW.Controllers.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<RentRequestModel>().HasKey(rr => new
-            {
-                rr.UserId,
-                rr.CarId
-            });
+        
 
             modelBuilder.Entity<RentRequestModel>()
                 .HasOne(rr => rr.User)

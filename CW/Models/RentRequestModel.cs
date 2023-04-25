@@ -6,17 +6,17 @@ namespace CW.Models
     public class RentRequestModel
     {
         [Key]
-        public string RequestId { get; set; }
+        public int RequestId { get; set; }
 
         [ForeignKey("UserId")]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         [ForeignKey("CarId")]
-        public string CarId { get; set; }
+        public int CarId { get; set; }
 
-        public DateOnly StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
-        public DateOnly EndDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         public virtual UsersModel User { get; set; }
 
