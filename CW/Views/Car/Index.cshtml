@@ -1,0 +1,22 @@
+﻿@model List<CarsModel>
+
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="">
+            @foreach (var item in Model)
+            {
+                <p>@Html.DisplayFor(modelItem => item.Model)</p>
+                <img src="@item.Picture" alt="car picture" style="max-width: 200px"/>
+                <p>@Html.DisplayFor(modelItem => item.Condition)</p>
+                <p>@Html.DisplayFor(modelItem => item.Availability)</p>
+                <p>@Html.DisplayFor(modelItem => item.RentPrice)</p>
+            }
+            
+        </div>
+    </div>
+
+</div>
