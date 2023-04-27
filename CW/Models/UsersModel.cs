@@ -15,6 +15,12 @@ namespace CW.Models
 
         public string Address { get; set; }
 
+        public string Password { get; set; }
+
+        [Compare("Password", ErrorMessage = "Passwords do not match.")]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; }
+
         public virtual ICollection<RentRequestModel> RentRequests { get; set; }
     }
 }

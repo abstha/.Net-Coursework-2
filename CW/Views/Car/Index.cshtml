@@ -5,18 +5,25 @@
 }
 
 <div class="row">
-    <div class="col-md-8 offset-md-2">
-        <div class="">
-            @foreach (var item in Model)
-            {
-                <p>@Html.DisplayFor(modelItem => item.Model)</p>
-                <img src="@item.Picture" alt="car picture" style="max-width: 200px"/>
-                <p>@Html.DisplayFor(modelItem => item.Condition)</p>
-                <p>@Html.DisplayFor(modelItem => item.Availability)</p>
-                <p>@Html.DisplayFor(modelItem => item.RentPrice)</p>
-            }
-            
-        </div>
-    </div>
-
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 col-xs-6 border-primary mb-3">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="@item.Picture" width="100%" alt="@item.Model">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <p class="card-text"><b>Model: </b>@item.Model</p>
+                                <p class="card-text"><b>Condition: </b>@item.Condition</p>
+                                <p class="card-text"><b>Availability: </b>@item.Availability</p>
+                                <p class="card-text"><b>Rent price: </b>@item.RentPrice</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
 </div>
+

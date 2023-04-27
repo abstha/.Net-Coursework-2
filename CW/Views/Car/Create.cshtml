@@ -1,0 +1,54 @@
+﻿@model CarsModel
+
+@{
+    ViewData["Title"] = "Create Cars";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Add a New Actor</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group text-center">
+                        <img id="ProfilePicturePreview" class="border-info rounded-circle" style="max-width: 150px" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Picture" class="control-label"></label>
+                        <input asp-for="Picture" class="form-control" />
+                        <span asp-validation-for="Picture" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Model" class="control-label"></label>
+                        <input asp-for="Model" class="form-control" />
+                        <span asp-validation-for="Model" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Condition" class="control-label"></label>
+                        <input asp-for="Condition" class="form-control" />
+                        <span asp-validation-for="Condition" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Availability" class="control-label"></label>
+                        <input asp-for="Availability" class="form-control" />
+                        <span asp-validation-for="Availability" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RentPrice" class="control-label"></label>
+                        <input asp-for="RentPrice" class="form-control" />
+                        <span asp-validation-for="RentPrice" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

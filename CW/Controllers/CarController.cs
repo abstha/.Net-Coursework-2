@@ -1,4 +1,5 @@
 ﻿using CW.Controllers.Data;
+using CW.Controllers.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -6,15 +7,20 @@ namespace CW.Controllers
 {
     public class CarController : Controller
     {
-        private readonly AppDbContext _context;
-        public CarController(AppDbContext context)
+        private readonly ICarsService _carsService;
+        public CarController(ICarsService carsService)
         {
-            _context = context;
+            _carsService = carsService;
         }
         public IActionResult Index()
         {
-            var data = _context.Cars.ToList();
+            var data = _carsService.GetAll();
             return View(data);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
